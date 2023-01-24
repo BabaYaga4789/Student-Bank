@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/checkUser}" th:object="${UserLogin}" method="post">
+    <h2>Account Details</h2>
+    <div class="topnav" style="background-color: black" overflow=hidden padding="14px 16px">
+        <a href="/register_form">New Account</a>
+        <a href="/transaction_form">New Transaction</a>
+        <a href="transaction_record">Transaction Records</a>
+        <a href="/login_form">Logout</a>
+    </div>
+    <table>
+        <tr>
+            <th>Account Number</th>
+            <th>Account Type</th>
+            <th>Account Balance</th>
+        </tr>
+        <tr>
+            <td><p th:text="${userAccountNumber}"/></td>
+            <td><p th:text="${userAccountType}"/></td>
+            <td><p th:text="${userAccountBalance}"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+

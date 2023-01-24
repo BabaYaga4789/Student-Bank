@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form action="#" th:action="@{/transactionPage}" th:object="${Transaction}" method="post">
+        <div class="transaction">
+            <h1>Transaction Page</h1>
+            <label>Account Number: </label>
+            <p th:text="${userAccountNumber}"/>
+            <label>Account Balance:</label>
+            <p th:text="${userAccountBalance}"/>
+            <br>
+            <br>
+            <label>Transaction Amount:</label>
+            <input type="number" th:field="*{transferAmount}" required
+                   placeholder="enter the amount you want to transfer">
+            <br>
+            <br>
+            <label>Email ID:</label>
+            <input type="text" th:field="*{receiverEmail}" required
+                   placeholder="enter mail of the person you want to transfer money">
+            <br>
+            <br>
+            <button type="submit" name="transactionSubmitButton">Submit</button>
+        </div>
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<center><h1>Registration</h1>
+    <form action="#" th:action="@{/saveUser}" th:object="${UserRegistration}" method="post">
+        <div class="Registration">
+            <label>First Name: </label>
+            <input type="text" th:field="*{firstName}" required placeholder="Enter First Name"
+                   name="RegisterFirstNameTextBox">
+            <br>
+            <br>
+            <label>Last Name: </label>
+            <input type="text" th:field="*{lastName}" required placeholder="Enter Last Name"
+                   name="RegisterLastNameTextBox">
+            <br>
+            <br>
+            <label>Email: </label>
+            <input type="email" th:field="*{userEmail}" required placeholder="Enter Email" name="RegisterEmailTextBox">
+            <br>
+            <br>
+            <label>Password: </label>
+            <input type="password" th:field="*{password}" required placeholder="Enter password"
+                   name="RegisterPasswordTextBox">
+            <br>
+            <br>
+            <label>Confirm Password: </label>
+            <input type="password" th:field="*{confirmPassword}" required placeholder="Enter confirm password"
+                   name="RegisterConfirmPasswordTextBox">
+            <br>
+            <br>
+            <label>Address: </label>
+            <input type="text" th:field="*{address}" required placeholder="Enter full address"
+                   name="RegisterAddressTextBox">
+            <br>
+            <br>
+            <label>Phone Number: </label>
+            <input type="number" th:field="*{phoneNumber}" required placeholder="Enter phone number"
+                   name="RegisterPhoneNumberTextBox">
+            <br>
+            <br>
+            <label>Gender: </label>
+            <input type="radio" th:field="*{gender}" name="RegisterGenderRadioBox1" value="Male">
+            <button1>Male</button1>
+            <input type="radio" th:field="*{gender}" name="RegisterGenderRadioBox2" value="Female">
+            <button2>Female</button2>
+            <input type="radio" th:field="*{gender}" name="RegisterGenderRadioBox3" value="others">
+            <button3>Prefer Not to say</button3>
+            <br>
+            <br>
+            <label>Age: </label>
+            <input type="number" th:field="*{age}" placeholder="Enter your current age" name="RegisterAgeTextBox">
+            <br>
+            <br>
+            <label>Initial Amount Deposit: </label>
+            <input type="number" th:field="*{initialDepositAmount}" placeholder="Enter your Amount"
+                   name="RegisterAgeTextBox">
+            <br>
+            <br>
+            <label>Account Type: </label>
+            <select th:field="*{accountType}">
+                <option value="Savings"> Savings</option>
+                <option value="Chequing"> Chequing</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" name="LoginSubmitButton">Submit</button>
+        </div>
+    </form>
+    <p th:text="${Name}"/>
+    <p th:text="${password}"/>
+    <p th:text="${registerUnsuccessful}"/>
+</center>
+</body>
+</html>

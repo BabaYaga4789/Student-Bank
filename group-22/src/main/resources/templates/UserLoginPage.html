@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<center><h1>Login</h1>
+    <form action="#" th:action="@{/checkUser}" th:object="${loginPage}" method="post">
+        <div class="login">
+            <label>User Name: </label>
+            <input type="email" th:field="*{userEmail}" required placeholder="Enter Email" name="RegisterEmailTextBox">
+            <br>
+            <br>
+            <label>Password: </label>
+            <input type="password" th:field="*{password}" required placeholder="Enter password"
+                   name="RegisterPasswordTextBox">
+            <br>
+            <br>
+            <button type="submit" name="LoginSubmitButton">Submit</button>
+            <br>
+            <br>
+            <a href="register_form"> New user? click here</a>
+        </div>
+    </form>
+    <p th:text="${loginError}"/>
+</center>
+</body>
+</html>
